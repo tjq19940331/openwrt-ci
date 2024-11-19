@@ -95,7 +95,7 @@ jobs:
         ./scripts/feeds update -a
         git clone https://github.com/tjq19940331/luci-app-adguardhome.git package/custom/luci-app-adguardhome
         git clone https://github.com/tjq19940331/luci-app-advancedplus.git package/custom/luci-app-advancedplus
-        git clone https://github.com/sirpdboy/luci-app-lucky.git package/custom/luci-app-lucky
+        git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
         git clone https://github.com/sbwml/luci-app-airconnect.git package/custom/luci-app-airconnect
         git clone https://github.com/danchexiaoyang/luci-app-onliner.git package/custom/luci-app-onliner
         git clone https://github.com/morytyann/OpenWrt-mihomo.git package/custom/luci-app-mihomo
