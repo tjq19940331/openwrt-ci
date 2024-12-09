@@ -98,11 +98,15 @@ jobs:
         ./scripts/feeds update -a
         git clone https://github.com/tjq19940331/luci-app-adguardhome.git package/custom/luci-app-adguardhome
         git clone https://github.com/tjq19940331/luci-app-advancedplus.git package/custom/luci-app-advancedplus
-        git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
+        git clone https://github.com/tjq19940331//luci-app-lucky.git package/custom/luci-app-lucky
         git clone https://github.com/sbwml/luci-app-airconnect.git package/custom/luci-app-airconnect
         git clone https://github.com/danchexiaoyang/luci-app-onliner.git package/custom/luci-app-onliner
         git clone https://github.com/morytyann/OpenWrt-mihomo.git package/custom/luci-app-mihomo
         ./scripts/feeds install -a
+        mkdir -p files/usr/bin/AdGuardHome
+        AGH_CORE=$(curl -sL https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest | grep /AdGuardHome_linux_${1} | awk -F '"' '{print $4}' | awk 'NR==3')
+        wget -qO- $AGH_CORE | tar xOvz > files/usr/bin/AdGuardHome/AdGuardHome
+        chmod +x files/usr/bin/AdGuardHome/AdGuardHome
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
